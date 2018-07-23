@@ -32,7 +32,7 @@ class RaceService {
         val lapTime = normalizedLine.removePrefix("$absoluteHour|$pilotId|$pilotName|$lapNumber|").substringBefore("|")
         val avgVelocity = normalizedLine.removePrefix("$absoluteHour|$pilotId|$pilotName|$lapNumber|$lapTime|").substringBefore("|").replace(",", ".")
 
-        var absoluteHourToDate = getAbsoluteTimeBy(absoluteHour)
+        val absoluteHourToDate = getAbsoluteTimeBy(absoluteHour)
 
         val lap = Lap(absoluteHourToDate, pilotId.toLong(),
                 lapNumber.toInt(),
