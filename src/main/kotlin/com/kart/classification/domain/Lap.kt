@@ -1,4 +1,6 @@
 package com.kart.classification.domain
 
-data class Lap (val absoluteHour: String, val pilotId: String, val lapNumber: String, val lapTime: String){
+import java.time.LocalDateTime
+
+data class Lap (val absoluteHour: LocalDateTime, val pilotId: Long, val lapNumber: Int, val lapTime: String, val avgVelocity: Long){
 }
