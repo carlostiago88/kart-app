@@ -12,10 +12,10 @@ class FileResponse (pilots:List<Pilot>,
                     bestLap: Lap){
 
     init{
-        println("Posição Chegada\tCódigo Piloto\tNome Piloto\tQtde Voltas Completadas")
+        println("Position\tID\tPilotName\tFinished Laps")
         var i = 1
         finalPosition.forEach {
-            println("$i\t${it.pilotId}\t${pilots.find { pilot -> pilot.id == it.pilotId }?.name}\t${it.lapNumber}")
+            println(i.toString().padEnd(8)+"\t${it.pilotId.toString().padEnd(2)}\t${pilots.find { pilot -> pilot.id == it.pilotId }?.name?.padEnd(20)}\t${it.lapNumber}")
             i++
         }
         val minutes = ChronoUnit.MINUTES.between(beginRaceTime, finalRaceTime)

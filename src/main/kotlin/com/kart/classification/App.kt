@@ -1,3 +1,4 @@
+@file:JvmName("App")
 package com.kart.classification
 
 import com.kart.classification.service.FileService
