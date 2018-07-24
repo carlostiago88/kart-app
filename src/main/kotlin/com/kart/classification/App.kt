@@ -1,18 +1,11 @@
 package com.kart.classification
 
-import com.kart.classification.service.RaceService
-import java.io.File
+import com.kart.classification.service.FileService
 
-fun main(args: Array<String>) {
 
-    val raceService = RaceService()
-    val filename = "src/main/resources/kart_log.txt"
-
-    File(filename).forEachLine {
-        if(it.startsWith("Hora").not())
-            raceService.mountDomains(it)
+    fun main(args: Array<String>) {
+        val fileService = FileService()
+        fileService.fileInitialize("src/main/resources/kart_log.txt")
     }
-    raceService.mountRaceData()
-}
 
 
