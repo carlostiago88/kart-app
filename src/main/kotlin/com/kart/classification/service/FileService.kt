@@ -23,8 +23,4 @@ open class FileService {
 
         raceService.mountRaceData()
     }
-
-    fun mountResponse(pilots:List<Pilot>, finalPosition: List<Lap>, beginRaceTime: Lap?, finalRaceTime: Lap?) {
-
-    }
 }
