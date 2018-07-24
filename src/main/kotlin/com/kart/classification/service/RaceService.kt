@@ -62,9 +62,8 @@ open class RaceService {
                 .asReversed()
                 .distinctBy { it.pilotId }
                 .sortedBy { it.absoluteHour }
-
-        return FileResponse(pilots,finalPosition,beginRaceTime?.lapBeginTime,finalRaceTime?.lapBeginTime)
-
+        val bestLapByPilot = laps.minBy { it.lapTime }
+        return FileResponse(pilots,finalPosition,beginRaceTime?.lapBeginTime,finalRaceTime?.lapBeginTime,bestLapByPilot!!)
     }
 
     private fun getBeginLapTime(lapTime: String, absoluteHour: LocalDateTime): LocalDateTime {

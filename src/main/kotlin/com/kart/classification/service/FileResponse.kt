@@ -5,7 +5,11 @@ import com.kart.classification.domain.Pilot
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 
-class FileResponse (var pilots:List<Pilot>, var finalPosition:List<Lap>, var beginRaceTime:LocalDateTime?,var finalRaceTime:LocalDateTime?){
+class FileResponse (var pilots:List<Pilot>,
+                    var finalPosition:List<Lap>,
+                    var beginRaceTime:LocalDateTime?,
+                    var finalRaceTime:LocalDateTime?,
+                    var bestLap: Lap){
 
     init{
         println("Posição Chegada\tCódigo Piloto\tNome Piloto\tQtde Voltas Completadas")
@@ -17,6 +21,8 @@ class FileResponse (var pilots:List<Pilot>, var finalPosition:List<Lap>, var beg
         val minutes = ChronoUnit.MINUTES.between(beginRaceTime, finalRaceTime)
         val seconds = ChronoUnit.SECONDS.between(beginRaceTime, finalRaceTime) % 60
         println("Tempo total de prova: $minutes minutos e $seconds segundos")
+        println("")
+        println("Best Lap ${bestLap.lapTime} by ${pilots.find { pilot -> pilot.id == bestLap.pilotId }?.name} ")
     }
 
 }
