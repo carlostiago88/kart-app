@@ -5,11 +5,11 @@ import com.kart.classification.domain.Pilot
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 
-class FileResponse (var pilots:List<Pilot>,
-                    var finalPosition:List<Lap>,
-                    var beginRaceTime:LocalDateTime?,
-                    var finalRaceTime:LocalDateTime?,
-                    var bestLap: Lap){
+class FileResponse (pilots:List<Pilot>,
+                    finalPosition:List<Lap>,
+                    beginRaceTime:LocalDateTime?,
+                    finalRaceTime:LocalDateTime?,
+                    bestLap: Lap){
 
     init{
         println("Posição Chegada\tCódigo Piloto\tNome Piloto\tQtde Voltas Completadas")
