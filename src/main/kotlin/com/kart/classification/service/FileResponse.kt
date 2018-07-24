@@ -20,9 +20,9 @@ class FileResponse (var pilots:List<Pilot>,
         }
         val minutes = ChronoUnit.MINUTES.between(beginRaceTime, finalRaceTime)
         val seconds = ChronoUnit.SECONDS.between(beginRaceTime, finalRaceTime) % 60
-        println("Tempo total de prova: $minutes minutos e $seconds segundos")
+        println("Total Time: $minutes minutos e $seconds segundos")
         println("")
-        println("Best Lap ${bestLap.lapTime} by ${pilots.find { pilot -> pilot.id == bestLap.pilotId }?.name} ")
+        println("Record Lap ${bestLap.lapTime} by ${pilots.find { pilot -> pilot.id == bestLap.pilotId }?.name} ")
     }
 
 }
